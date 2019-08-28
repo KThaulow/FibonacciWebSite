@@ -35,11 +35,5 @@ jobs:
         npm install
         npm run build --if-present
         #npm test
-    - name: npm install, build, and test [nginx]
-      working-directory: nginx
-      run: |
-        npm install
-        npm run build --if-present
-        #npm test
       env:
         CI: true
