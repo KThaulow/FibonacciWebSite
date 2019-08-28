@@ -16,29 +16,25 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-        
+        node-version: ${{ matrix.node-version }}     
     - name: npm install, build, and test [server]
       working-directory: server
       run: |
         npm install
         npm run build --if-present
         #npm test
-        
-   - name: npm install, build, and test [client]
+    - name: npm install, build, and test [client]
       working-directory: client
       run: |
         npm install
         npm run build --if-present
         #npm test
-        
     - name: npm install, build, and test [worker]
       working-directory: worker
       run: |
         npm install
         npm run build --if-present
         #npm test
-        
     - name: npm install, build, and test [nginx]
       working-directory: nginx
       run: |
